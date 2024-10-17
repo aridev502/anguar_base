@@ -1,0 +1,20 @@
+<p>PERSONAJES</p>
+
+<hr>
+
+
+<div class='container-fluid'>
+   <div class='row'>
+      <div class='col'>
+         <app-list-component [characters]="character" (onRemoveCharacter)="deleteCharacte($event)"></app-list-component>
+
+      </div>
+
+
+
+      <div class='col'>
+         <app-form-component (onNewCharacter)="addnewCharacte($event)"></app-form-component>
+      </div>
+   </div>
+
+</div>

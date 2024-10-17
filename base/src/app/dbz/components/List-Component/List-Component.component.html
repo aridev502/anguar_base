@@ -1,0 +1,34 @@
+<div class='card'>
+    <div class='card-body'>
+        <h4 class='card-title'>LSITADO</h4>
+
+
+        <ul class="list-group ">
+
+            <li *ngFor="let character of characters; let i = index; let isFirts = first; let isLast = last; let isEven = even; let isOdd = odd"
+                class="list-group-item" [ngClass]="{
+                'list-group-item-primary': isEven,
+                'list-group-item-success': isOdd
+            }">
+
+                ({{i+1}})
+                {{character.name}} = Poder:
+                {{character.power}}
+
+                <button type="button" class="btn btn-danger btn-sm" (click)="onDeleteCharacter(i)">
+                    X
+                </button>
+
+
+                <!-- <span class="badge bg-primary rounded-pill" *ngIf="isFirts">Es el Primero {{ isFirts }}</span>
+                <span class="badge bg-success rounded-pill" *ngIf="isLast">Es el Ultimo {{ isLast }}</span>
+                <span class="badge bg-info rounded-pill" *ngIf="isEven">Es el Par {{ isEven }}</span>
+                <span class="badge bg-success rounded-pill" *ngIf="isOdd">Es el Impar {{ isOdd }}</span> -->
+
+
+            </li>
+
+        </ul>
+
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div class='card'>
+    <div class='card-body'>
+        <h4 class='card-title'>NUEVO GUERRO Z</h4>
+
+
+        <form (ngSubmit)="emmitCharacter()">
+
+            <div class="mb-3">
+                <label for="" class="form-label">NOMBRE</label>
+                <input type="text" class="form-control" [(ngModel)]="character.name" name="name" />
+            </div>
+
+
+            <div class="mb-3">
+                <label for="" class="form-label">Poder</label>
+                <input type="number" class="form-control" [(ngModel)]="character.power" name="power" />
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                AGREGAR
+            </button>
+
+
+            <pre>{{character | json}}</pre>
+
+
+        </form>
+
+    </div>
+</div>
