@@ -20,6 +20,9 @@ export class ListComponentComponent {
   @Output()
   public onRemoveCharacter: EventEmitter<number> = new EventEmitter();
 
+  @Output()
+  public onRemoveCharacterbyid: EventEmitter<string> = new EventEmitter();
+
   /*************  ✨ Codeium Command ⭐  *************/
   /**
    * Removes a character from the list at the given index
@@ -28,5 +31,9 @@ export class ListComponentComponent {
   /******  5ec49c4e-08c6-4e5f-8245-b9edb55117ea  *******/
   onDeleteCharacter(index: number): void {
     this.onRemoveCharacter.emit(index);
+  }
+
+  onDeleteById(id: string): void {
+    this.onRemoveCharacterbyid.emit(id);
   }
 }

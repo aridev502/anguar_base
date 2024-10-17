@@ -6,14 +6,15 @@
 <div class='container-fluid'>
    <div class='row'>
       <div class='col'>
-         <app-list-component [characters]="character" (onRemoveCharacter)="deleteCharacte($event)"></app-list-component>
+         <app-list-component [characters]="character" (onRemoveCharacterbyid)="onDeleteCharacterById($event)"
+            (onRemoveCharacter)="onDeleteCharacter($event)"></app-list-component>
 
       </div>
 
 
 
       <div class='col'>
-         <app-form-component (onNewCharacter)="addnewCharacte($event)"></app-form-component>
+         <app-form-component (onNewCharacter)="addNewCharacter($event)"></app-form-component>
       </div>
    </div>
 

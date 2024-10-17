@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CharacterInterface } from '../../interfaces/character.ternface';
+import { DBZService } from '../../services/DBZ.service';
 
 @Component({
   selector: 'app-main-page',
@@ -7,34 +8,21 @@ import { CharacterInterface } from '../../interfaces/character.ternface';
   styleUrl: './main-page.component.css',
 })
 export class MainPageComponent {
-  public character: Array<CharacterInterface> = [
-    {
-      name: 'Krilin',
-      power: 1000,
-    },
-    {
-      name: 'goku',
-      power: 9500,
-    },
-    {
-      name: 'Vegeta',
-      power: 1000,
-    },
-    {
-      name: 'Trunks',
-      power: 9000,
-    },
-    {
-      name: 'Gohan',
-      power: 8000,
-    },
-  ];
+  constructor(private dbzservice: DBZService) {}
 
-  addnewCharacte(character: CharacterInterface): void {
-    this.character.push(character);
+  get character(): CharacterInterface[] {
+    return [...this.dbzservice.character];
   }
 
-  deleteCharacte(index: number): void {
-    this.character.splice(index, 1);
+  onDeleteCharacterById(index: string): void {
+    this.dbzservice.deleteCharaterById(index);
+  }
+
+  onDeleteCharacter(index: number): void {
+    this.dbzservice.deleteCharacte(index);
+  }
+
+  addNewCharacter(character: CharacterInterface): void {
+    this.dbzservice.addnewCharacte(character);
   }
 }
