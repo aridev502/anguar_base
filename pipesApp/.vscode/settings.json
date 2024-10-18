@@ -1,0 +1,15 @@
+{
+    "editor.fontSize": 15,
+    "window.zoomLevel": 0.8,
+    "angular-schematics.schematicsDefaultOptions": {
+        "angular-*": {
+            "externalTemplate": true
+        },
+        "angular-page": {
+            "eagerLoading": true
+        },
+        "angular-routes": {
+            "eagerLoading": true
+        }
+    }
+}

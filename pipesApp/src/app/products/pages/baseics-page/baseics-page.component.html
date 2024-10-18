@@ -1,0 +1,66 @@
+<p-panel header="Header" [toggleable]="true" class="p-2">
+    <p>
+        Lorem ipsum dolor sit amet...
+    </p>
+</p-panel>
+
+<div class="grid mt-2">
+
+    <div class="col-12 md:col-6 lg:col-3">
+        <p-card header="Upeprcase">{{ namelowe | uppercase }}</p-card>
+    </div>
+
+    <div class="col-12 md:col-6 lg:col-3">
+        <p-card header="LowerCase">{{ namelupper | lowercase }}</p-card>
+    </div>
+
+    <div class="col-12 md:col-6 lg:col-3">
+        <p-card header="TitleCase"> {{ fillname | titlecase }} </p-card>
+    </div>
+
+
+</div>
+
+<div class="grid mt-2">
+
+
+
+    <div class="col-12 md:col-6 ">
+        <p-card header="Fechas">
+
+            {{customDate}} <br>
+            {{ customDate | date }} <br>
+            {{ customDate | date: 'short' }} <br>
+            {{ customDate | date: 'long' }} <br>
+            {{ customDate | date: 'fullDate' }} <br>
+            {{ customDate | date: 'fullTime' }} <br>
+            {{ customDate | date: 'longDate' }} <br>
+            {{ customDate | date: 'MMMM dd, yyyy' }} <br>
+            {{ customDate | date: 'shortTime' }} <br>
+
+            {{ customDate | date: 'EEEE, MMMM dd, y' }} <br>
+
+            {{ customDate | date: 'long': '-06:00' }} <br>
+
+
+
+        </p-card>
+    </div>
+
+    <div class="col-12 md:col-6 ">
+        <p-card header="Fechas Personalizadas">
+
+
+
+
+            {{ customDate | date: 'fullDate' : '-06:00' : 'es-GT' }} <br>
+
+
+            {{ customDate | date: 'long': '-06:00' : 'es-GT' }} <br>
+
+
+
+        </p-card>
+    </div>
+
+</div>
